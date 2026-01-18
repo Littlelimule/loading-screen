@@ -13,12 +13,11 @@
 
     <script>
         var video = document.getElementById("bgVideo");
-        video.volume = 0.5; // Volume à 50% pour ne pas exploser les oreilles des joueurs
-
-        // Petite astuce pour forcer le lancement si le navigateur bloque
+        video.volume = 0.5; 
         document.addEventListener('click', function() {
             video.play();
         });
     </script>
 </body>
 </html>
+
