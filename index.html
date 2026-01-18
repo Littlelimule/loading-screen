@@ -1,35 +1,24 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: black;
-        }
-
-        video,
-        img {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: black; }
+        video { width: 100vw; height: 100vh; object-fit: cover; position: absolute; top: 0; left: 0; }
     </style>
 </head>
-
 <body>
-    <video autoplay loop>
+    <video id="bgVideo" autoplay loop>
         <source src="background.webm" type="video/webm">
     </video>
+
+    <script>
+        var video = document.getElementById("bgVideo");
+        video.volume = 0.5; // Volume à 50% pour ne pas exploser les oreilles des joueurs
+
+        // Petite astuce pour forcer le lancement si le navigateur bloque
+        document.addEventListener('click', function() {
+            video.play();
+        });
+    </script>
 </body>
-
-
 </html>
